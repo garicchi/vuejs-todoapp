@@ -6,6 +6,8 @@ Vue.jsにはシンプルに1つのファイル内にすべてのコンポーネ�
 
 どちらも```npm install```すること
 
+![img](vuetodo.gif)
+
 ### simpleな方法を1から作る方法
 
 ```sh
