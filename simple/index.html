@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+	<script type="text/x-template" id="input-template">
+		<div>
+				<label>title</label>
+				<input v-model="current_item.title"></input>
+				<label>descrpition</label>
+				<input v-model="current_item.description"></input>
+				<button v-on:click="onSubmit()">Submit</button>
+		</div>
+	</script>
+	<script type="text/x-template" id="items-template">
+	  <ul>
+		<li v-for="item in items">
+		  <p>
+			タイトル:
+			{{item.title}}
+		  </p>
+		  <p>
+			詳細:
+			{{item.description}}
+		  </p>
+		  <p>
+			作成日:
+			{{item.created_at}}
+		  </p>
+		  <p>
+			<button v-on:click=onRemove(item)>削除</button>
+		  </p>
+		</li>
+	  </ul>
+	</script>
+	
+	<h1>Vue.js Simple Todo App</h1>
+	<section id="app">
+		<input-component v-bind:current_item="current_item" v-bind:items="todo_items"></input-component>
+		<todo-component v-bind:items="todo_items"></todo-component>
+	</section>
+	<script src="node_modules/vue/dist/vue.js"></script>
+	<script src="./index.js"></script>
+  </body>
+</html>
